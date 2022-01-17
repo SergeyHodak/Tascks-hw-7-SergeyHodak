@@ -1,19 +1,21 @@
 package hw7v4.input;
 
+import hw7v4.Shape.*;
+
 enum Shapes {
     Line, Triangle, Polyhedron, Quad, Circle;
 }
 
 public class SelectFromList {
-    public String name(String name) {
+    public static Shape name(String name) {
         switch(name) {
-            case "Line": return Shapes.Line.name();
-            case "Triangle": return Shapes.Triangle.name();
-            case "Polyhedron": return Shapes.Polyhedron.name();
-            case "Quad": return Shapes.Quad.name();
-            case "Circle": return Shapes.Circle.name();
+            case "Line": return new Line();
+            case "Triangle": return new Triangle();
+            case "Polyhedron": return new Polyhedron();
+            case "Quad": return new Quad();
+            case "Circle": return new Circle();
         }
-        return "Такой фигуры нет";
+        return new Shape();
     }
 
     public static void main(String[] args) {
